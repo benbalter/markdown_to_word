@@ -11,6 +11,10 @@ module MarkdownToWord
       @html ||= HTML::Pipeline::MarkdownFilter.new(markdown).call
     end
 
+    def hash
+      @hash ||= Digest::MD5.hexdigest(html)
+    end
+
     def contents
       @contents ||= Htmltoword::Document.create(html, template)
     end
