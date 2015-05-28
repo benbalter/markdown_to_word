@@ -8,7 +8,7 @@ module MarkdownToWord
     end
 
     def html
-      @html ||= HTML::Pipeline::MarkdownFilter.new(markdown).call
+      @html ||= Nokogiri::HTML(raw_html).to_html
     end
 
     def hash
@@ -16,7 +16,13 @@ module MarkdownToWord
     end
 
     def contents
-      @contents ||= Htmltoword::Document.create(html, template)
+      @contents ||= Htmltoword::Document.create(html, template, true)
+    end
+
+    private
+
+    def raw_html
+      @raw_html ||= HTML::Pipeline::MarkdownFilter.new(markdown).call
     end
   end
 end

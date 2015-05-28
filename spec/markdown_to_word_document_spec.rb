@@ -11,13 +11,14 @@ describe MarkdownToWord::Document do
   end
 
   it "converts the html" do
-    expect(subject.html).to eql("<h1>Test</h1>")
+    expect(subject.send(:raw_html)).to eql("<h1>Test</h1>")
+  end
+
+  it "makes it a valid HTML document" do
+    expect(subject.html).to match(/<html><body><h1>Test<\/h1><\/body><\/html>/)
   end
 
   it "converts the file" do
-    Tempfile.open("MarkdownToWord.docx") do |file|
-      File.write(file, subject.contents)
-      expect(WordToMarkdown.new(file).to_s).to eql("# Test")
-    end
+    as_markdown(subject.contents) { |md| expect(md).to eql("# Test") }
   end
 end
