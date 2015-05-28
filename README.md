@@ -8,6 +8,10 @@ Converts GitHub-flavored Markdown to a Word document
 
 While Markdown is the *lingua franca* of the development world, the rest of the world still sees Word documents as the *de facto* way to share text. Rather than try to convert the rest of the world, just work in Markdown, and convert things to Word before sending to others.
 
+## Demo
+
+You can see it in action with [this demo](https://markdown-to-word.herokuapp.com/)
+
 ## Installation
 
 Add the following to your project's Gemfile:
