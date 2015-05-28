@@ -12,3 +12,6 @@
 *.o
 *.a
 mkmf.log
+.cabal-sandbox
+cabal.sandbox.config
+dist
