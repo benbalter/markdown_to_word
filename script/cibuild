@@ -1,0 +1,9 @@
+#!/bin/sh
+
+set -e
+
+bundle exec m2w --version
+
+bundle exec rake spec
+
+bundle exec gem build markdown_to_word.gemspec

@@ -7,12 +7,8 @@ module MarkdownToWord
       @markdown = markdown
     end
 
-    def template
-      @template ||= MarkdownToWord.default_template
-    end
-
     def html
-      @html ||= Kramdown::Document.new(markdown).to_html
+      @html ||= HTML::Pipeline::MarkdownFilter.new(markdown).call
     end
 
     def hash
