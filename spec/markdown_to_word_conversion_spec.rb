@@ -5,7 +5,7 @@ describe "MarkdownToWord Conversion" do
     md = fixture("ul")
     as_docx(md) do |docx|
       as_markdown(docx) do |ouput|
-         expect(ouput).to eql(md)
+         expect(ouput).to eql(md.strip)
       end
     end
   end
@@ -14,7 +14,7 @@ describe "MarkdownToWord Conversion" do
     md = fixture("ol")
     as_docx(md) do |docx|
       as_markdown(docx) do |ouput|
-         expect(ouput).to eql(md)
+         expect(ouput).to eql(md.strip)
       end
     end
   end

@@ -1,0 +1,7 @@
+#!/bin/sh
+
+rm -f lib/markdown_to_word/default.docx
+pwd=$(cwd)
+cd lib/markdown_to_word/template
+zip -r -T -v ../default.docx *
+cd $pwd
