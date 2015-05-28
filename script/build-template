@@ -1,7 +1,18 @@
 #!/bin/sh
 
+set -e
+
 rm -f lib/markdown_to_word/default.docx
-pwd=$(cwd)
+cwd=$(pwd)
 cd lib/markdown_to_word/template
-zip -r -T -v ../default.docx *
-cd $pwd
+
+# Zip options:
+# r - recursive
+# l - convert LF to CR LF line endings
+# D - Don't make entries for directories
+# T - test the resulting zip
+# 9 - Moar compression
+# q - quiet
+zip -r -l -D -T -9 -q ../default.docx *
+
+cd $cwd
