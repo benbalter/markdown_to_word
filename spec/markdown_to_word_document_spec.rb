@@ -19,12 +19,18 @@ describe MarkdownToWord::Document do
   end
 
   it "returns the docx file path" do
-    path = subject.docx
-    expect(path).to match(/\/.*\.docx/)
-    expect(File.exists?(path)).to eql(true)
+    expect(subject.path).to match(/\/.*\.docx/)
+    expect(File.exists?(subject.path)).to eql(true)
   end
 
-  it "converts the file" do
-    expect(WordToMarkdown.new(subject.docx).to_s).to eql("# Test")
+  it "converts the file via path" do
+    expect(WordToMarkdown.new(subject.path).to_s).to eql("# Test")
+  end
+
+  it "converts the file via STDOUT" do
+    Tempfile.open("MarkdownToWord") do |file|
+      File.write(file, subject.contents)
+      expect(WordToMarkdown.new(file).to_s).to eql("# Test")
+    end
   end
 end

@@ -15,8 +15,12 @@ module MarkdownToWord
       Digest::MD5.hexdigest(html)
     end
 
-    def docx
+    def path
       Htmltoword::Document.create(html, hash, template).path
+    end
+
+    def contents
+      File.open(path).read
     end
   end
 end

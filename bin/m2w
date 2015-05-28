@@ -10,6 +10,6 @@ end
 if ARGV[0] == "--version"
   puts "MarkdownToWord v#{MarkdownToWord::VERSION}"
 else
-  path = MarkdownToWord.convert(ARGV[0])
-  puts File.open(path).read
+  doc = MarkdownToWord.convert(ARGV[0])
+  puts doc.contents
 end

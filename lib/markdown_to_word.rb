@@ -7,6 +7,6 @@ require_relative "markdown_to_word/document"
 
 module MarkdownToWord
   def self.convert(markdown)
-    Document.new(markdown).docx
+    Document.new(markdown)
   end
 end

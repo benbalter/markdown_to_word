@@ -19,7 +19,7 @@ gem 'markdown_to_word'
 ## Usage
 
 ```ruby
-MarkdownToWord.convert("# Some Markdown")
+MarkdownToWord.convert("# Some Markdown").path
 => "/path/to/the/file.docx"
 ```
 
