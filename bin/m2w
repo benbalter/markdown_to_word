@@ -1,3 +1,15 @@
 #!/usr/bin/env ruby
 
-require 'markdown-to-word'
+require_relative '../lib/markdown_to_word'
+
+if ARGV.size != 1 || ARGV[0] == "--help"
+  puts "Usage: bundle exec m2w [markdown]"
+  exit 1
+end
+
+if ARGV[0] == "--version"
+  puts "MarkdownToWord v#{MarkdownToWord::VERSION}"
+else
+  path = MarkdownToWord.convert(ARGV[0])
+  puts File.open(path).read
+end
