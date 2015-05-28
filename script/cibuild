@@ -2,6 +2,8 @@
 
 set -e
 
+script/build-template
+
 bundle exec m2w --version
 
 bundle exec rake spec
