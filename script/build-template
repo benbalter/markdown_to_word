@@ -13,6 +13,7 @@ cd lib/markdown_to_word/template
 # T - test the resulting zip
 # 9 - Moar compression
 # q - quiet
-zip -r -l -D -T -9 -q ../default.docx *
+# o - make the file as old as the latest entry
+zip -r -l -D -T -9 -q -o ../default.docx *
 
 cd $cwd
