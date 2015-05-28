@@ -2,6 +2,8 @@
 
 Converts GitHub-flavored Markdown to a Word document
 
+[![Build Status](https://travis-ci.org/benbalter/markdown_to_word.svg)](https://travis-ci.org/benbalter/markdown_to_word)
+
 ## Why
 
 While Markdown is the *lingua franca* of the development world, the rest of the world still sees Word documents as the *de facto* way to share text. Rather than try to convert the rest of the world, just work in Markdown, and convert things to Word before sending to others.
