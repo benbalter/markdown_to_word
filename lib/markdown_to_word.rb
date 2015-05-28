@@ -10,7 +10,9 @@ module MarkdownToWord
     Document.new(markdown)
   end
 
-  def self.default_template
-    File.expand_path "./markdown_to_word/template.docx", File.dirname(__FILE__)
+  def self.default_templates_path
+    File.expand_path "./markdown_to_word", File.dirname(__FILE__)
   end
 end
+
+Htmltoword.config.default_templates_path = MarkdownToWord.default_templates_path

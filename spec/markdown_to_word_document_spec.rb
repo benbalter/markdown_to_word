@@ -15,7 +15,7 @@ describe MarkdownToWord::Document do
   end
 
   it "converts the file" do
-    Tempfile.open("MarkdownToWord") do |file|
+    Tempfile.open("MarkdownToWord.docx") do |file|
       File.write(file, subject.contents)
       expect(WordToMarkdown.new(file).to_s).to eql("# Test")
     end

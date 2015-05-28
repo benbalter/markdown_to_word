@@ -10,8 +10,9 @@ describe MarkdownToWord do
   end
 
   it "returns the default template" do
-    template = MarkdownToWord.default_template
-    expect(template).to eql(File.expand_path("../lib/markdown_to_word/template.docx", File.dirname(__FILE__)))
+    template_dir = MarkdownToWord.default_templates_path
+    expect(template_dir).to eql(File.expand_path("../lib/markdown_to_word", File.dirname(__FILE__)))
+    template = File.expand_path("default.docx", template_dir)
     expect(File.exists?(template)).to eql(true)
   end
 end
