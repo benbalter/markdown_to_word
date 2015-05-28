@@ -10,6 +10,5 @@ end
 if ARGV[0] == "--version"
   puts "MarkdownToWord v#{MarkdownToWord::VERSION}"
 else
-  doc = MarkdownToWord.convert(ARGV[0])
-  puts doc.contents
+  puts MarkdownToWord.convert(ARGV[0]).contents
 end
