@@ -15,6 +15,10 @@ module MarkdownToWord
       @hash ||= Digest::MD5.hexdigest(html)
     end
 
+    def template
+      @template ||= MarkdownToWord.default_template
+    end
+
     def contents
       @contents ||= Htmltoword::Document.create(html, template)
     end
