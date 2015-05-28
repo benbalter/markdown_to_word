@@ -26,7 +26,7 @@ MarkdownToWord.convert("# Some Markdown")
 ## Command line usage
 
 ```
-m2w "# Some Markdown" > "foo.docx"
+m2w "# Some Markdown" > foo.docx
 ```
 
 (Returns the contents of the docx to STDOUT)
