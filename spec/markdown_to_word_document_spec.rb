@@ -21,4 +21,12 @@ describe MarkdownToWord::Document do
   it "converts the file" do
     as_markdown(subject.contents) { |md| expect(md).to eql("# Test") }
   end
+
+  it "strips YAML front matter" do
+    doc = MarkdownToWord::Document.new("---\nfoo: bar\n---\n# Test")
+    expect(doc.markdown).to eql("# Test")
+
+    MarkdownToWord::Document.new("---\nfoo: bar\n---\n\n# Test")
+    expect(doc.markdown).to eql("# Test")
+  end
 end

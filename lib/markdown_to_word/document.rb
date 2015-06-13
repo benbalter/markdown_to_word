@@ -1,10 +1,17 @@
 module MarkdownToWord
   class Document
 
-    attr_accessor :markdown, :template, :html
+    attr_accessor :template, :html
+
+    # https://github.com/jekyll/jekyll/blob/master/lib/jekyll/document.rb#L9
+    YAML_FRONT_MATTER_REGEXP = /\A(---\s*\n.*?\n?)^((---|\.\.\.)\s*$\n?)/m
 
     def initialize(markdown="")
-      @markdown = markdown
+      @raw_markdown = markdown
+    end
+
+    def markdown
+      @raw_markdown.split(YAML_FRONT_MATTER_REGEXP).last
     end
 
     def html
