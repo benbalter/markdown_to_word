@@ -17,14 +17,13 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "htmltoword", "~> 0.4.2"
-  spec.add_dependency "html-pipeline"
-  spec.add_dependency "github-markdown"
+  spec.add_dependency "htmltoword", "~> 0.5"
+  spec.add_dependency "html-pipeline", "~> 2.2"
+  spec.add_dependency "github-markdown", "~> 0.6"
 
   spec.add_development_dependency "bundler", "~> 1.6"
   spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "pry"
-  spec.add_development_dependency "rspec"
-  spec.add_development_dependency "word-to-markdown"
-
+  spec.add_development_dependency "pry", "~> 0.10"
+  spec.add_development_dependency "rspec", "~> 3.4"
+  spec.add_development_dependency "word-to-markdown", "~> 1.1"
 end

@@ -13,7 +13,7 @@ def fixture(fixture)
 end
 
 def as_markdown(contents, &block)
-  Tempfile.open("MarkdownToWord.docx") do |file|
+  Tempfile.open(["MarkdownToWord", ".docx"]) do |file|
     File.write(file, contents)
     md = WordToMarkdown.new(file).to_s
     yield(md)
